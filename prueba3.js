@@ -1,1 +1,0 @@
-console.log("Estoy en la prueba externa")
