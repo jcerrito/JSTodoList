@@ -3,6 +3,7 @@ import Modal from './components/modal.js';
 import Filters from './components/filters.js';
 
 export default class View {
+
   constructor() {
     this.model = null;
     this.table = document.getElementById('table');
@@ -109,7 +110,11 @@ export default class View {
     const removeBtn = document.createElement('button');
     removeBtn.classList.add('btn', 'btn-danger', 'mb-1', 'ml-1');
     removeBtn.innerHTML = '<i class="fa fa-trash"></i>';
-    removeBtn.onclick = () => this.removeTodo(todo.id);
     row.children[3].appendChild(removeBtn);
+    removeBtn.onclick = () => {
+      if (confirm('You are about to delete this item.\nDo you wish to continue?')) {
+        this.removeTodo(todo.id);
+      }
+    }
   }
 }
