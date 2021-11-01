@@ -11,4 +11,8 @@ export default class Alert {
   hide() {
     this.alert.classList.add('d-none');
   }
+
+  alertConfirm(message) {
+    
+  }
 }
